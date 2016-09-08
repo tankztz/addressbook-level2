@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
+import seedu.addressbook.data.person.Printable;
 /**
  * Text UI of the application.
  */
@@ -163,6 +164,15 @@ public class TextUi {
      */
     private static String getIndexedListItem(int visibleIndex, String listItem) {
         return String.format(MESSAGE_INDEXED_LIST_ITEM, visibleIndex, listItem);
+    }
+    
+    private static String getPrintableString(Printable... printables){
+    	String str="";
+    	for (Printable i:printables){
+    		str+=i.getPrintableString();
+    		str+=" ";
+    	}
+    	return str.trim();
     }
 
 }
